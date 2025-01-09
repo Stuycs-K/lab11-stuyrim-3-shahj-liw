@@ -14,3 +14,12 @@ Make a clear list of features that work/dont work
 :x: This required feature does not work.
 
 :beetle: This is a bug that affects the game.
+
+# Subclasses
+
+## Mad Alchemist
+- **HP**: **80 HP**
+- **Attack**: *Acid Throw*: Deals 20 damage to an enemy and restores 10 toxicity 
+- **Support**: *Healthy Brew*: Throws healing potions at its team, healing each member for 10 hp.
+- **Ultimate**: *Elder Dragon’s Acid (Requires 50 toxicity)*: Deals 50 damage to each enemy, also dealing 20 damage to itself. Can die while performing this special attack.
+- **Special Resource**: **Toxicity**
