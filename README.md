@@ -23,3 +23,12 @@ Make a clear list of features that work/dont work
 - **Support**: *Healthy Brew*: Throws healing potions at its team, healing each member for 10 hp.
 - **Ultimate**: *Elder Dragon’s Acid (Requires 50 toxicity)*: Deals 50 damage to each enemy, also dealing 20 damage to itself. Can die while performing this special attack.
 - **Special Resource**: **Toxicity**
+
+
+## Tech Priest
+- **HP**: **60 HP**
+- **Attack**: *Guided Bolt*: Deals 10 damage to the enemy and increases faith by 10
+- **Support**: *Artificial Augmentation*: Self converts half of current strength to HP, adds that number to HP, and then resets self strength to zero
+- **Support (Ally)**: *Security in Metal*: Heal Ally for 20 HP and give him 10 Special; Self loses 30 Strength
+- **Ultimate**: *Deus Ex Machina (Requires 25 Faith)*: Deals 30 damage to the enemy but self loses 25 Strength
+- **Special Resource**: **Faith**
