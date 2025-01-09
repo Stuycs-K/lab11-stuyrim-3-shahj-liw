@@ -28,7 +28,7 @@ Make a clear list of features that work/dont work
 ## Tech Priest
 - **HP**: **60 HP**
 - **Attack**: *Guided Bolt*: Deals 10 damage to the enemy and increases faith by 10
-- **Support**: *Artificial Augmentation*: Self converts half of current strength to HP, adds that number to HP, and then resets self strength to zero
-- **Support (Ally)**: *Security in Metal*: Heal Ally for 20 HP and give him 10 Special; Self loses 30 Strength
-- **Ultimate**: *Deus Ex Machina (Requires 25 Faith)*: Deals 30 damage to the enemy but self loses 25 Strength
+- **Support (Self)**: *Artificial Augmentation*: Self converts half of current faith to HP, adds that number to HP, and then sets self faith to zero
+- **Support (Ally)**: *Security in Metal*: Heal lowest HP Ally for 25 HP and give him 10 of respective Special resource, but self loses 30 faith
+- **Ultimate**: *Deus Ex Machina (Requires 25 Faith)*: Deals 30 damage to the enemy, self loses 25 faith
 - **Special Resource**: **Faith**
