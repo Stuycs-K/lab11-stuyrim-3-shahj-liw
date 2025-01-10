@@ -17,18 +17,25 @@ Make a clear list of features that work/dont work
 
 # Subclasses
 
+## Cyber Samurai
+- **HP**: **100 HP**
+- **Attack**: *Cyber Slice*: Deals 25 damage to an enemy and restores 5 focus 
+- **Support**: *Meditate*: Restores 10 focus and 5 hp
+- **Ultimate**: *Rampage (Requires 50 focus)*: Deals 60 damage to each enemy
+- **Special Resource**: **Focus**
+
 ## Mad Alchemist
 - **HP**: **80 HP**
-- **Attack**: *Acid Throw*: Deals 20 damage to an enemy and restores 10 toxicity 
-- **Support**: *Healthy Brew*: Throws healing potions at its team, healing each member for 10 hp.
-- **Ultimate**: *Elder Dragon’s Acid (Requires 50 toxicity)*: Deals 50 damage to each enemy, also dealing 20 damage to itself. Can die while performing this special attack.
+- **Attack**: *Acid Throw*: Deals 15 damage to an enemy and restores 10 toxicity 
+- **Support**: *Healthy Brew*: Throws healing potions at its team, healing each team member for 10 hp
+- **Ultimate**: *Elder Dragon’s Acid (Requires 50 toxicity)*: Deals 50 damage to each enemy, also dealing 20 damage to itself. Can die while performing this special attack
 - **Special Resource**: **Toxicity**
 
 
 ## Tech Priest
 - **HP**: **60 HP**
-- **Attack**: *Guided Bolt*: Deals 10 damage to the enemy and increases faith by 10
-- **Support (Self)**: *Artificial Augmentation*: Self converts half of current faith to HP, adds that number to HP, and then sets self faith to zero
-- **Support (Ally)**: *Security in Metal*: Heal lowest HP Ally for 25 HP and give him 10 of respective Special resource, but self loses 30 faith
-- **Ultimate**: *Deus Ex Machina (Requires 25 Faith)*: Deals 30 damage to the enemy, self loses 25 faith
+- **Attack**: *Guided Bolt*: Deals 5 damage to the enemy and restore 10 faith
+- **Support (Self)**: *Artificial Augmentation*: Converts half of current faith to additional HP
+- **Support (Ally)**: *Security in Metal*: Uses 30 faith to heal lowest HP Ally for 20 HP and restore 10 of their special resource
+- **Ultimate**: *Deus Ex Machina (Requires 60 Faith)*: Uses faith to restore HP of each team member to max.
 - **Special Resource**: **Faith**
