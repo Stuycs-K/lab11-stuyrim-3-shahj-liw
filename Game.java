@@ -38,7 +38,20 @@ public class Game{
   */
   public static void TextBox(int row, int col, int width, int height, String text){
 	/*>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>*/
-	//YOUR CODE HERE
+	 Text.go(row, col);
+   for(int i=0; i<text.length();i++){
+     if(i+1%width==0){
+       System.out.print("\n");
+     }
+   }
+   System.out.print(text.substring(i,i+1));
+   for(int j=0; j<width*height-text.length();j++{
+     System.out.print(" ")
+     if(i+1%width==0){
+       System.out.print("\n");
+     }
+   }
+  }
 	/*<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<*/
   }
 
