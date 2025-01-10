@@ -1,28 +1,14 @@
 public class TechPriest extends Adventurer{
   int faith, faithMax;
-  String machine_god;
 
   public TechPriest(String name, int hp, String machine){
-    super(name,hp);
+    super(name,hp); // 60 hp
     faithMax = 100;
-    faith = faithMax/2;
-    machine_god=machine;
-  }
-
-  public TechPriest(String name, int hp){
-    this(name,hp,"Horus");
-  }
-
-  public TechPriest(String name){
-    this(name,24);
-  }
-
-  public TechPriest(){
-    this("OP-1");
+    faith = 20;
   }
 
   public String getSpecialName(){
-    return "faith";
+    return "Faith";
   }
 
   public int getSpecial(){
@@ -30,7 +16,15 @@ public class TechPriest extends Adventurer{
   }
 
   public void setSpecial(int n){
-    faith = n;
+    if (n < 0){
+      faith = 0;
+    }
+    else if (n > faithMax){
+      faith = faithMax;
+    }
+    else{
+      faith = n;
+    }
   }
 
   public int getSpecialMax(){
@@ -52,5 +46,5 @@ public class TechPriest extends Adventurer{
 
   public String support(){
 
-  }    
+  }
 }

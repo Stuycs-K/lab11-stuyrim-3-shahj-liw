@@ -1,28 +1,14 @@
 public class MadAlchemist extends Adventurer{
   int toxicity, toxicityMax;
-  String chemistry;
-
-  public MadAlchemist(String name, int hp, String machine){
-    super(name,hp);
-    toxicityMax = 100;
-    toxicity = toxicityMax/2;
-    chemistry=machine;
-  }
 
   public MadAlchemist(String name, int hp){
-    this(name,hp,"Organic Chemistry");
-  }
-
-  public MadAlchemist(String name){
-    this(name,24);
-  }
-
-  public MadAlchemist(){
-    this("Louis Pasteur");
+    super(name,hp); // 80 hp
+    toxicityMax = 100;
+    toxicity = 40;
   }
 
   public String getSpecialName(){
-    return "toxicity";
+    return "Toxicity";
   }
 
   public int getSpecial(){
@@ -30,7 +16,15 @@ public class MadAlchemist extends Adventurer{
   }
 
   public void setSpecial(int n){
-    toxicity = n;
+    if (n < 0){
+      toxicity = 0;
+    }
+    else if (n > toxicityMax){
+      toxicity = toxicityMax;
+    }
+    else{
+      toxicity = n;
+    }
   }
 
   public int getSpecialMax(){
@@ -52,5 +46,5 @@ public class MadAlchemist extends Adventurer{
 
   public String support(){
 
-  }    
+  }
 }
