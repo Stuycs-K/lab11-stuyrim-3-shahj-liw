@@ -56,14 +56,15 @@ public class CyberSamurai extends Adventurer{
     }else{
       return "Not enough focus to Rampage. Instead, "+ attack(other);
     }
-
   }
-  /*Restores 10-15 focus for self*/
+
+  /*Restores 10-15 of allies special*/
   public String support(Adventurer other){
     int amount = (int)(Math.random()*6) + 10;
     return this + " meditates with " + other + ", restoring 10 " + other.getSpecialName()
     + " to " + other.restoreSpecial(amount);
   }
+
   /*Restores 10-15 focus to self.*/
   public String support(){
     int amount = (int)(Math.random()*6) + 10;
