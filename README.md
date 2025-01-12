@@ -19,16 +19,18 @@ Make a clear list of features that work/dont work
 
 ## Cyber Samurai
 - **HP**: **100 HP**
-- **Attack**: *Cyber Slice*: Deals 25 damage to an enemy and restores 5 focus 
-- **Support**: *Meditate*: Restores 10 focus and 5 hp
-- **Ultimate**: *Rampage (Requires 50 focus)*: Deals 60 damage to each enemy
+- **Attack**: *Cyber Slice*: Deals 20-25 damage to an enemy and restores 10 focus 
+- **Support (Self)**: *Meditate*: Restores 10-15 focus
+- **Support (Ally)**: *Group Meditation*: Restores 10 specialResource to ally
+- **Ultimate**: *Rampage (Requires 50 focus)*: Deals 50-75 damage to each enemy
 - **Special Resource**: **Focus**
 
 ## Mad Alchemist
 - **HP**: **80 HP**
-- **Attack**: *Acid Throw*: Deals 15 damage to an enemy and restores 10 toxicity 
-- **Support**: *Healthy Brew*: Throws healing potions at its team, healing each team member for 10 hp
-- **Ultimate**: *Elder Dragon’s Acid (Requires 50 toxicity)*: Deals 50 damage to each enemy, also dealing 20 damage to itself. Can die while performing this special attack
+- **Attack**: *Acid Throw*: Deals 15-20 damage to an enemy and restores 5 toxicity 
+- **Support (Ally)**: *Healthy Brew*: Throws a healing potion to a team member, healing them for 20 hp
+- **Support (Self)**: *Meditate*: Restores 5-10 toxicity
+- **Ultimate**: *Elder Dragon’s Acid (Requires 50 toxicity)*: Deals 80 damage to each enemy, also dealing 20 damage to itself. Can die while performing this special attack
 - **Special Resource**: **Toxicity**
 
 
@@ -36,6 +38,6 @@ Make a clear list of features that work/dont work
 - **HP**: **60 HP**
 - **Attack**: *Guided Bolt*: Deals 5 damage to the enemy and restore 10 faith
 - **Support (Self)**: *Artificial Augmentation*: Converts half of current faith to additional HP
-- **Support (Ally)**: *Security in Metal*: Uses 30 faith to heal lowest HP Ally for 20 HP and restore 10 of their special resource
+- **Support (Ally)**: *Security in Metal*: Uses 15 faith to heal Ally for 20 HP and restore 10 of their special resource
 - **Ultimate**: *Deus Ex Machina (Requires 60 Faith)*: Uses faith to restore HP of each team member to max.
 - **Special Resource**: **Faith**
