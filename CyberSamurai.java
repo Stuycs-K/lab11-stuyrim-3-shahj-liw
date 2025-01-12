@@ -6,7 +6,7 @@ public class CyberSamurai extends Adventurer{
   public CyberSamurai(String name, int hp, String language){
     super(name,hp);
     focusMax =100;
-    focus = 30;
+    focus = 50;
   }
 
   /*The next 8 methods are all required because they are abstract:*/
@@ -34,41 +34,41 @@ public class CyberSamurai extends Adventurer{
     return focusMax;
   }
 
-  /*Deal 2-7 damage to opponent, restores 2 caffeine*/
+  /*Deal 20-25 damage to opponent, restores 10 focus*/
   public String attack(Adventurer other){
-    int damage = (int)(Math.random()*6)+2;
+    int damage = (int)(Math.random()*6)+20;
     other.applyDamage(damage);
-    restoreSpecial(2);
-    return this + " attacked "+ other + " and dealt "+ damage +
-    " points of damage. They then take a sip of their coffee.";
+    restoreSpecial(10);
+    return this + " cyber sliced "+ other + " and dealt "+ damage +
+    " points of damage. While attacking, " + this + " gathers 10 focus.";
   }
 
-  /*Deal 3-12 damage to opponent, only if caffeine is high enough.
-  *Reduces caffeine by 8.
+  /*Deal 50-75 damage to opponent, only if focus is high enough.
+  *Reduces focus by 50.
   */
   public String specialAttack(Adventurer other){
-    if(getSpecial() >= 8){
-      setSpecial(getSpecial()-8);
-      int damage = (int)(Math.random()*5+Math.random()*5)+3;
+    if(getSpecial() >= 50){
+      setSpecial(getSpecial()-50);
+      int damage = (int)(Math.random()*26)+50;
       other.applyDamage(damage);
-      return this + " used their "+
-      " skills to hack the matrix. "+
-      " This glitched out "+other+" dealing "+ damage +" points of damage.";
+      return this + " gathers 50 focus to perform Rampage and deals "+ damage 
+      + " to each enemy!";
     }else{
-      return "Not enough caffeine to use the ultimate code. Instead "+attack(other);
+      return "Not enough focus to Rampage. Instead, "+ attack(other);
     }
 
   }
-  /*Restores 5 special to other*/
+  /*Restores 10-15 focus for self*/
   public String support(Adventurer other){
-    return "Gives a coffee to "+other+" and restores "
-    + other.restoreSpecial(5)+" "+other.getSpecialName();
+    int amount = (int)(Math.random()*6) + 10;
+    return this + " meditates with " + other + ", restoring 10 " + other.getSpecialName()
+    + " to " + other.restoreSpecial(amount);
   }
-  /*Restores 6 special and 1 hp to self.*/
+  /*Restores 10-15 focus to self.*/
   public String support(){
-    int hp = 1;
-    setHP(getHP()+hp);
-    return this+" drinks a coffee to restores "+restoreSpecial(6)+" "
-    + getSpecialName()+ " and "+hp+" HP";
+    int amount = (int)(Math.random()*6) + 10;
+    restoreSpecial(amount);
+    return this + " meditates in the midst of battle and restores " + amount
+    + " focus.";
   }
 }
