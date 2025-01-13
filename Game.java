@@ -101,6 +101,30 @@ public class Game{
 
       /*>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>*/
       //YOUR CODE HERE
+
+      int spacing = 30/party.size();
+      // names
+      for (int i = 0; i < party.size(); i++){
+        Text.go(startRow, spacing * i + 1);
+        System.out.print(party.get(i).getName());
+      }
+
+      // health
+      for (int i = 0; i < party.size(); i++){
+        Text.go(startRow + 1, spacing * i + 1);
+        System.out.print("HP: " + party.get(i).getHP());
+      }
+
+      // special
+      for (int i = 0; i < party.size(); i++){
+        Text.go(startRow + 2, spacing * i + 1);
+        System.out.print(party.get(i).getSpecialName() + ": " + party.get(i).getSpecial());
+      }
+
+      // blank
+      Text.go(startRow + 3, 1);
+      System.out.print("LEFT BLANK");
+
       /*<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<*/
     }
 
