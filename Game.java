@@ -2,7 +2,7 @@ import java.util.*;
 public class Game{
   private static final int WIDTH = 80;
   private static final int HEIGHT = 30;
-  private static final int BORDER_COLOR = Text.BLACK;
+  private static final int BORDER_COLOR = Text.BLUE;
   private static final int BORDER_BACKGROUND = Text.WHITE + Text.BACKGROUND;
 
   public static void main(String[] args) {
@@ -18,10 +18,10 @@ public class Game{
         for (int j = 1; j <= WIDTH; j++){
             Text.go(i,j);
             if (i == 1 || i == 30 || j == 1 || j == 80){
-              System.out.println(Text.colorize("+", Text.YELLOW, Text.BACKGROUND));
+              System.out.println(Text.colorize(" ", BORDER_COLOR + Text.BACKGROUND));
             }
             else{
-              System.out.println("");
+              System.out.println(Text.colorize(" ", BORDER_BACKGROUND));
             }
         }
     }
