@@ -1,7 +1,7 @@
 public class TechPriest extends Adventurer{
   int faith, faithMax;
 
-  public TechPriest(String name, int hp, String machine){
+  public TechPriest(String name, int hp){
     super(name,hp); // 60 hp
     faithMax = 100;
     faith = 20;
