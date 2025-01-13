@@ -18,17 +18,16 @@ public class Game{
         for (int j = 1; j <= WIDTH; j++){
             Text.go(i,j);
             if (i == 1 || i == 30 || j == 1 || j == 80){
-              System.out.println(Text.colorize("+",BOLD,BLACK,YELLOW+BACKGROUND+BRIGHT));
+              System.out.println(Text.colorize("+", Text.YELLOW, Text.BACKGROUND));
             }
             else if (i == 3){
-              System.out.println(Text.colorize("+",BOLD,BLACK,YELLOW+BACKGROUND+BRIGHT));
+              System.out.println(Text.colorize("+", Text.YELLOW, Text.BACKGROUND));
             }
             else{
-              System.out.println(Text.colorize("+",BOLD,BLACK,RED+BACKGROUND+BRIGHT));
+              System.out.println("");
             }
         }
     }
-    System.out.println(colorize("Abra",BOLD,BLACK,YELLOW+BACKGROUND+BRIGHT)+" cadabra hocus pocus...");
 
     /*<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<*/
   }
