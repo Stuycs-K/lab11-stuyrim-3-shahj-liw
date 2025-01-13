@@ -52,7 +52,21 @@ public class Game{
   public static void TextBox(int row, int col, int width, int height, String text){
     /*>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>*/
     //YOUR CODE HERE
-
+    Text.go(row,col);
+    int place = 0;
+    for (int i = 0; i < height; i++){
+      Text.go(row + i, col); // goes to the current row based off i
+      for (int j = 0; j < width; j++){ // starts writing
+        if (place < text.length()){ // makes sure it doesnt go out of bounds
+          System.out.print(text.charAt(place));
+          place++; // go to next character in the text string
+        }
+        else{
+          System.out.print(" "); // padding
+        }
+      }
+      System.out.println(""); //moves to next line
+    }
     /*<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<*/
   }
 
