@@ -3,7 +3,7 @@ public class CyberSamurai extends Adventurer{
 
   /*the other constructors ultimately call the constructor
   *with all parameters.*/
-  public CyberSamurai(String name, int hp, String language){
+  public CyberSamurai(String name, int hp){
     super(name,hp);
     focusMax =100;
     focus = 50;
@@ -51,7 +51,7 @@ public class CyberSamurai extends Adventurer{
       setSpecial(getSpecial()-50);
       int damage = (int)(Math.random()*26)+50;
       other.applyDamage(damage);
-      return this + " gathers 50 focus to perform Rampage and deals "+ damage 
+      return this + " gathers 50 focus to perform Rampage and deals "+ damage
       + " to each enemy!";
     }else{
       return "Not enough focus to Rampage. Instead, "+ attack(other);
