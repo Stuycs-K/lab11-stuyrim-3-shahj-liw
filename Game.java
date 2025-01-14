@@ -234,22 +234,22 @@ public class Game{
         //Process user input for the last Adventurer:
         if(input.equals("attack") || input.equals("a")){
           /*>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>*/
-          String attacked=userInput();
-          input.attack(attacked);//Fix, not quite right I think but should be a placeholder
+          //String attacked=userInput();
+          //input.attack(attacked);//Fix, not quite right I think but should be a placeholder
           /*<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<*/
         }
         else if(input.equals("special") || input.equals("sp")){
           /*>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>*/
-          String specialed=userInput();
-          input.special(specialed);//Fix, not quite right I think but should be a placeholder
+          //String specialed=userInput();
+          //input.special(specialed);//Fix, not quite right I think but should be a placeholder
           /*<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<*/
         }
         else if(input.startsWith("su ") || input.startsWith("support ")){
           //"support 0" or "su 0" or "su 2" etc.
           //assume the value that follows su  is an integer.
           /*>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>*/
-          String supported=userInput();
-          input.support(supported);//Fix, not quite right I think but should be a placeholder
+          //String supported=userInput();
+          //input.support(supported);//Fix, not quite right I think but should be a placeholder
           /*<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<*/
         }
 
