@@ -20,6 +20,9 @@ public class Game{
             if (i == 1 || i == 30 || j == 1 || j == 80){
               System.out.println(Text.colorize(" ", BORDER_COLOR + Text.BACKGROUND));
             }
+            else if (i == 7 || i == 24){
+              System.out.println(Text.colorize(" ", BORDER_COLOR + Text.BACKGROUND));
+            }
             else{
               System.out.println(Text.colorize(" ", BORDER_BACKGROUND));
             }
