@@ -81,13 +81,13 @@ public class Game{
     public static Adventurer createRandomAdventurer(){
       int selection = (int) (Math.random()*3);
       if (selection == 0){
-        return new CyberSamurai("Bob", 100);
+        return new CyberSamurai("William", 100);
       }
       else if (selection == 1){
-        return new MadAlchemist("Bobby", 80);
+        return new MadAlchemist("Jai", 80);
       }
       else {
-        return new TechPriest("Bobbete", 60);
+        return new TechPriest("Vanna", 60);
       }
     }
 
@@ -105,30 +105,28 @@ public class Game{
       /*>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>*/
       //YOUR CODE HERE
 
-      int spacing = 30/party.size();
+      int spacing = 30;
       // names
       for (int i = 0; i < party.size(); i++){
-        Text.go(startRow, spacing * i + 1);
+        Text.go(startRow, spacing * i + 3);
         System.out.print(party.get(i).getName());
       }
 
       // health
       for (int i = 0; i < party.size(); i++){
-        Text.go(startRow + 1, spacing * i + 1);
-        System.out.print("HP: " + party.get(i).getHP());
+        Text.go(startRow + 1, spacing * i + 3);
+        System.out.print("HP: " + party.get(i).getHP() + "/" + party.get(i).getmaxHP());
       }
 
       // special
       for (int i = 0; i < party.size(); i++){
-        Text.go(startRow + 2, spacing * i + 1);
-        System.out.print(party.get(i).getSpecialName() + ": " + party.get(i).getSpecial());
+        Text.go(startRow + 2, spacing * i + 3);
+        System.out.print(party.get(i).getSpecialName() + ": " + party.get(i).getSpecial() + "/" + party.get(i).getSpecialMax());
       }
 
-      // blank
-      Text.go(startRow + 3, 1);
-      System.out.print("LEFT BLANK");
-
       /*<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<*/
+
+      Text.go(32, 1);
     }
 
 
@@ -163,6 +161,12 @@ public class Game{
     drawBackground();
 
     //draw player party
+    ArrayList<Adventurer> party = new ArrayList<Adventurer>();
+    party.add(createRandomAdventurer());
+    party.add(createRandomAdventurer());
+    party.add(createRandomAdventurer());
+
+    drawParty(party, 2);
 
     //draw enemy party
 
