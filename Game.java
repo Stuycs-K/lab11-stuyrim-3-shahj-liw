@@ -81,13 +81,13 @@ public class Game{
     public static Adventurer createRandomAdventurer(){
       int selection = (int) (Math.random()*3);
       if (selection == 0){
-        return new CyberSamurai("William", 100);
+        return new CyberSamurai("Vanna", 100);
       }
       else if (selection == 1){
         return new MadAlchemist("Jai", 80);
       }
       else {
-        return new TechPriest("Vanna", 60);
+        return new TechPriest("William", 60);
       }
     }
 
@@ -151,7 +151,9 @@ public class Game{
 
 
 
-
+  public static Adventurer p1=createRandomAdventurer();
+  public static Adventurer p2=createRandomAdventurer();
+  public static Adventurer p3=createRandomAdventurer();
 
   //Display the party and enemies
   //Do not write over the blank areas where text will appear.
@@ -162,9 +164,9 @@ public class Game{
 
     //draw player party
     ArrayList<Adventurer> party = new ArrayList<Adventurer>();
-    party.add(createRandomAdventurer());
-    party.add(createRandomAdventurer());
-    party.add(createRandomAdventurer());
+    party.add(p1);
+    party.add(p2);
+    party.add(p3);
 
     drawParty(party, 2);
 
@@ -209,7 +211,9 @@ public class Game{
     //Make an ArrayList of Adventurers and add 2-4 Adventurers to it.
     ArrayList<Adventurer> party = new ArrayList<>();
     /*>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>*/
-    //YOUR CODE HERE
+    party.add(p1);
+    party.add(p2);
+    party.add(p3);
     /*<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<*/
 
     boolean partyTurn = true;
@@ -241,22 +245,19 @@ public class Game{
         //Process user input for the last Adventurer:
         if(input.equals("attack") || input.equals("a")){
           /*>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>*/
-          //String attacked=userInput();
-          //input.attack(attacked);//Fix, not quite right I think but should be a placeholder
+          party.get(whichPlayer).attack();
           /*<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<*/
         }
         else if(input.equals("special") || input.equals("sp")){
           /*>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>*/
-          //String specialed=userInput();
-          //input.special(specialed);//Fix, not quite right I think but should be a placeholder
+          party.get(whichPlayer).special();
           /*<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<*/
         }
         else if(input.startsWith("su ") || input.startsWith("support ")){
           //"support 0" or "su 0" or "su 2" etc.
           //assume the value that follows su  is an integer.
           /*>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>*/
-          //String supported=userInput();
-          //input.support(supported);//Fix, not quite right I think but should be a placeholder
+          party.get(whichPlayer).support();
           /*<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<*/
         }
 
