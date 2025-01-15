@@ -34,7 +34,7 @@
     return paycheckMax;
   }
 
-//  deal 15-20 damage to opponent, restores 10 paycheck
+// Stone Throw:  deal 15-20 damage to opponent, restores 10 paycheck
   public String attack(Adventurer other){
     int damage = (int)(Math.random()*6) + 15;
     other.applyDamage(damage);
@@ -43,6 +43,7 @@
     " points of damage. While attacking, their boss pays them 10 paycheck.";
   }
 
+  //- **Ultimate**: *Baseball Bat Bash (Requires 40 paycheck)*: Deals 0-50 damage
   public String specialAttack(Adventurer other){
     if (getSpecial() >= 40){
       setSpecial(getSpecial() - 40);
@@ -62,12 +63,16 @@
     }
   }
 
+//**Support (Ally)**: *Tax evasion*: Restores 10-15 specialResource to ally
+
   public String support(Adventurer other){
     int amount = (int)(Math.random()*6) + 10;
     other.restoreSpecial(amount);
     return this + " magically fabricates paychecks and gives them to " + other +
     " to evade the IRS, restoring " + amount + " paychecks to " + other;
   }
+
+  //- **Support (Self)**: *So Lucky!*: Restores 10-15 paycheck
 
   public String support(){
     int amount = (int)(Math.random()*6) + 10;
