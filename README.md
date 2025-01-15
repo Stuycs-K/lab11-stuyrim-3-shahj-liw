@@ -15,7 +15,7 @@ Make a clear list of features that work/dont work
 
 :beetle: This is a bug that affects the game.
 
-# Subclasses
+# Ally Subclasses
 
 ## Cyber Samurai
 - **HP**: **100 HP**
@@ -41,3 +41,13 @@ Make a clear list of features that work/dont work
 - **Support (Ally)**: *Security in Metal*: Uses 15 faith to heal Ally for 20 HP and restore 10 of their special resource
 - **Ultimate**: *Deus Ex Machina (Requires 60 Faith)*: Uses faith to restore HP of each team member to max.
 - **Special Resource**: **Faith**
+
+# Enemy Subclasses
+
+## OpenAIEmployee
+- **HP**: **75 HP**
+- **Attack**: *Stone Throw*: Deals 15-20 damage, restores 10 paycheck
+- **Support (Self)**: *So Lucky!*: Restores 10-15 paycheck
+- **Support (Ally)**: *Tax evasion*: Restores 10-15 specialResource to ally
+- **Ultimate**: *Baseball Bat Bash (Requires 40 paycheck)*: Deals 0-50 damage
+- **Special Resource**: **Paycheck**
