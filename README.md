@@ -42,7 +42,7 @@ Make a clear list of features that work/dont work
 - **Ultimate**: *Deus Ex Machina (Requires 60 Faith)*: Uses faith to restore HP of each team member to max.
 - **Special Resource**: **Faith**
 
-# Enemy Subclasses
+# Enemy Subclass
 
 ## OpenAIEmployee
 - **HP**: **75 HP**
@@ -51,3 +51,12 @@ Make a clear list of features that work/dont work
 - **Support (Ally)**: *Tax evasion*: Restores 10-15 specialResource to ally
 - **Ultimate**: *Baseball Bat Bash (Requires 40 paycheck)*: Deals 0-50 damage
 - **Special Resource**: **Paycheck**
+
+# Boss
+
+## ChatGPT
+- **HP**: **300 HP**
+- **Attack**: *Remove free image upload*: Deals 30 damage, restores 10 serverDownPercentage
+- **Support (Self)**: *Self Sabotage but Good*: Restores 20 serverDownPercentage
+- **Ultimate**: *Crash before Finals (Requires 100 paycheck)*: Deals 99 damage
+- **Special Resource**: **serverDownPercentage**
