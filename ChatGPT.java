@@ -1,37 +1,37 @@
-public class Boss extends Adventurer{
-  int agi, agiMax;
+public class ChatGPT extends Adventurer{
+  int serverDownPercentage, serverDownPercentageMax;
 
   /*the other constructors ultimately call the constructor
   *with all parameters.*/
-  public Boss(String name, int hp){
+  public ChatGPT(String name, int hp){
     super(name,hp);
-    agiMax =100;
-    agi = 50;
+    serverDownPercentageMax =100;
+    serverDownPercentage = 50;
   }
 
   /*The next 8 methods are all required because they are abstract:*/
   public String getSpecialName(){
-    return "agi";
+    return "serverDownPercentage";
   }
 
   public int getSpecial(){
-    return agi;
+    return serverDownPercentage;
   }
 
   public void setSpecial(int n){
     if (n < 0){
-      agi = 0;
+      serverDownPercentage = 0;
     }
-    else if (n > agiMax){
-      agi = agiMax;
+    else if (n > serverDownPercentageMax){
+      serverDownPercentage = serverDownPercentageMax;
     }
     else{
-      agi = n;
+      serverDownPercentage = n;
     }
   }
 
   public int getSpecialMax(){
-    return agiMax;
+    return serverDownPercentageMax;
   }
 
   public String attack(Adventurer other){
