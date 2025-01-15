@@ -1,37 +1,37 @@
-public class Boss extends Adventurer{
-  int agi, agiMax;
+public class OpenAIEmployee extends Adventurer{
+  int paycheck, paycheckMax;
 
   /*the other constructors ultimately call the constructor
   *with all parameters.*/
-  public Boss(String name, int hp){
+  public OpenAIEmployee(String name, int hp){
     super(name,hp);
-    agiMax =100;
-    agi = 50;
+    paycheckMax =100;
+    paycheck = 50;
   }
 
   /*The next 8 methods are all required because they are abstract:*/
   public String getSpecialName(){
-    return "agi";
+    return "paycheck";
   }
 
   public int getSpecial(){
-    return agi;
+    return paycheck;
   }
 
   public void setSpecial(int n){
     if (n < 0){
-      agi = 0;
+      paycheck = 0;
     }
-    else if (n > agiMax){
-      agi = agiMax;
+    else if (n > paycheckMax){
+      paycheck = paycheckMax;
     }
     else{
-      agi = n;
+      paycheck = n;
     }
   }
 
   public int getSpecialMax(){
-    return agiMax;
+    return paycheckMax;
   }
 
   public String attack(Adventurer other){
