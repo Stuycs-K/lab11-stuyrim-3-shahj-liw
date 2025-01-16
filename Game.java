@@ -245,11 +245,19 @@ public class Game{
         //Process user input for the last Adventurer:
         if(input.equals("attack") || input.equals("a")){
           /*>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>*/
-          party.get(whichPlayer).attack();
+          int hit=userInput("which enemy? Type in 0-2, based on positioning");
+          if(hit<0||hit>2){
+            System.out.print("Nope, give me a target, coward");
+          }
+          party.get(hit).attack();
           /*<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<*/
         }
         else if(input.equals("special") || input.equals("sp")){
           /*>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>*/
+          int wild=userInput("which enemy? Type in 0-2, based on positioning");
+          if(wild<0||wild>2){
+            System.out.print("Nope, give me a target, coward");
+          }
           party.get(whichPlayer).special();
           /*<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<*/
         }
@@ -257,6 +265,10 @@ public class Game{
           //"support 0" or "su 0" or "su 2" etc.
           //assume the value that follows su  is an integer.
           /*>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>*/
+          int help=userInput("which enemy? Type in 0-2, based on positioning");
+          if(help<0||help>2){
+            System.out.print("Nope, give me a target, traitor");
+          }
           party.get(whichPlayer).support();//Get a actual value in);
           /*<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<*/
         }
