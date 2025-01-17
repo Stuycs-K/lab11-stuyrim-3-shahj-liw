@@ -305,7 +305,7 @@ public class Game{
         if(enemy.maxHP()*.5<enemy.hp()){
           enemy.support()
         }
-        else{
+        else if (enemy.special){
           enemy,Special();//If fails, calls attack, make this better
         }
         */
