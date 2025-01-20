@@ -154,9 +154,9 @@ public class Game{
   public static Adventurer p1=createRandomAdventurer();
   public static Adventurer p2=createRandomAdventurer();
   public static Adventurer p3=createRandomAdventurer();
-  public static Adventurer p11=createRandomAdventurer();
-  public static Adventurer p22=createRandomAdventurer();
-  public static Adventurer p33=createRandomAdventurer();
+  public static Adventurer p1e= new OpenAIEmployee("OpenAI Employee 1", 75);
+  public static Adventurer p2e= new OpenAIEmployee("OpenAI Employee 2", 75);
+  public static Adventurer p3e= new OpenAIEmployee("OpenAI Employee 3", 75);
   //Display the party and enemies
   //Do not write over the blank areas where text will appear.
   //Place the cursor at the place where the user will by typing their input at the end of this method.
@@ -175,9 +175,9 @@ public class Game{
     //draw enemy party
 
     ArrayList<Adventurer> enemies= new ArrayList<Adventurer>();
-    enemies.add(p11);
-    enemies.add(p22);
-    enemies.add(p33);
+    enemies.add(p1e);
+    enemies.add(p2e);
+    enemies.add(p3e);
     drawParty(enemies, 25);
   }
 
@@ -211,9 +211,9 @@ public class Game{
     //start with 1 boss and modify the code to allow 2-3 adventurers later.
     ArrayList<Adventurer>enemies = new ArrayList<Adventurer>();
     /*>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>*/
-    enemies.add(p11);
-    enemies.add(p22);
-    enemies.add(p33);
+    enemies.add(p1e);
+    enemies.add(p2e);
+    enemies.add(p3e);
     /*<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<*/
 
     //Adventurers you control:
