@@ -178,7 +178,7 @@ public class Game{
     enemies.add(p11);
     enemies.add(p22);
     enemies.add(p33);
-    drawParty(enemies, 17);
+    drawParty(enemies, 25);
   }
 
   public static String userInput(Scanner in){
