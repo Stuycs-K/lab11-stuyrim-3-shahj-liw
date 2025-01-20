@@ -252,7 +252,7 @@ public class Game{
       input = userInput(in);
 
       //example debug statment
-      TextBox(24,2,1,78,"input: "+input+" partyTurn:"+partyTurn+ " whichPlayer="+whichPlayer+ " whichOpp="+whichOpponent );
+      TextBox(9,3,50,1,"input: "+input+" partyTurn:"+partyTurn+ " whichPlayer="+whichPlayer+ " whichOpp="+whichOpponent );
 
       //display event based on last turn's input
       if(partyTurn){
@@ -260,7 +260,7 @@ public class Game{
         //Process user input for the last Adventurer:
         if(input.equals("attack") || input.equals("a")){
           /*>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>*/
-          System.out.println("Which enemy? Type in 0-2, based on positioning");
+          TextBox(20,3,30,1, "Which enemy? Type in 0-2, based on positioning" );
           int hit=Integer.parseInt(userInput(in));
           if(hit>=0&&hit<=enemies.size()){
             System.out.println(party.get(whichPlayer).attack(enemies.get(hit)));
@@ -272,7 +272,7 @@ public class Game{
         }
         else if(input.equals("special") || input.equals("sp")){
           /*>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>*/
-          System.out.println("Which enemy? Type in 0-2, based on positioning");
+          TextBox(20,3,30,1, "Which enemy? Type in 0-2, based on positioning" );
           int wild=Integer.parseInt(userInput(in));
           if(wild<0||wild>enemies.size()){
             System.out.print("No valid enemy selected");
@@ -286,7 +286,7 @@ public class Game{
           //"support 0" or "su 0" or "su 2" etc.
           //assume the value that follows su  is an integer.
           /*>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>*/
-          System.out.println("Which ally? Type in 0-2, based on positioning");
+          TextBox(20,3,30,1, "Which ally? Type in 0-2, based on positioning" );
           int help=Integer.parseInt(userInput(in));
           if(help<0||help>party.size()){
             System.out.print("Failed to help");
