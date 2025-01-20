@@ -154,7 +154,9 @@ public class Game{
   public static Adventurer p1=createRandomAdventurer();
   public static Adventurer p2=createRandomAdventurer();
   public static Adventurer p3=createRandomAdventurer();
-
+  public static Adventurer p11=createRandomAdventurer();
+  public static Adventurer p22=createRandomAdventurer();
+  public static Adventurer p33=createRandomAdventurer();
   //Display the party and enemies
   //Do not write over the blank areas where text will appear.
   //Place the cursor at the place where the user will by typing their input at the end of this method.
@@ -172,6 +174,11 @@ public class Game{
 
     //draw enemy party
 
+    ArrayList<Adventurer> enemies= new ArrayList<Adventurer>();
+    enemies.add(p11);
+    enemies.add(p22);
+    enemies.add(p33);
+    drawParty(enemies, 17);
   }
 
   public static String userInput(Scanner in){
@@ -204,12 +211,15 @@ public class Game{
     //start with 1 boss and modify the code to allow 2-3 adventurers later.
     ArrayList<Adventurer>enemies = new ArrayList<Adventurer>();
     /*>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>*/
-    //YOUR CODE HERE
+    enemies.add(p11);
+    enemies.add(p22);
+    enemies.add(p33);
     /*<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<*/
 
     //Adventurers you control:
     //Make an ArrayList of Adventurers and add 2-4 Adventurers to it.
     ArrayList<Adventurer> party = new ArrayList<>();
+  
     /*>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>*/
     party.add(p1);
     party.add(p2);
@@ -245,31 +255,40 @@ public class Game{
         //Process user input for the last Adventurer:
         if(input.equals("attack") || input.equals("a")){
           /*>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>*/
-          int hit=userInput("which enemy? Type in 0-2, based on positioning");
-          if(hit<0||hit>2){
-            System.out.print("Nope, give me a target, coward");
+          System.out.println("which enemy? Type in 0-2, based on positioning");
+          int hit=Integer.parseInt(userInput(in));
+          if(hit>=0&&hit<=enemies.size()){
+            System.out.println(party.get(whichPlayer).attack(enemies.get(hit)));
           }
-          party.get(hit).attack();
+          else{
+            System.out.println("Invalid Target");
+          }
           /*<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<*/
         }
         else if(input.equals("special") || input.equals("sp")){
           /*>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>*/
-          int wild=userInput("which enemy? Type in 0-2, based on positioning");
-          if(wild<0||wild>2){
-            System.out.print("Nope, give me a target, coward");
+          System.out.println("which enemy? Type in 0-2, based on positioning");
+          int wild=Integer.parseInt(userInput(in));
+          if(wild<0||wild>enemies.size()){
+            System.out.print("No valid enemy selected");
           }
-          party.get(whichPlayer).special();
+          else{
+            System.out.println(party.get(whichPlayer).support(enemies.get(wild)));
+          }
           /*<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<*/
         }
         else if(input.startsWith("su ") || input.startsWith("support ")){
           //"support 0" or "su 0" or "su 2" etc.
           //assume the value that follows su  is an integer.
           /*>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>*/
-          int help=userInput("which enemy? Type in 0-2, based on positioning");
-          if(help<0||help>2){
-            System.out.print("Nope, give me a target, traitor");
+          System.out.println("which enemy? Type in 0-x, based on positioning");
+          int help=Integer.parseInt(userInput(in));
+          if(help<0||help>party.size()){
+            System.out.print("Failed to help");
           }
-          party.get(whichPlayer).support();//Get a actual value in);
+           else{
+            System.out.println(party.get(whichPlayer).support(party.get(help)));
+           }
           /*<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<*/
         }
 
