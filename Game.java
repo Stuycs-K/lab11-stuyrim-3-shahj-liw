@@ -1,4 +1,6 @@
 import java.util.*;
+
+import javax.swing.text.DefaultStyledDocument.ElementSpec;
 public class Game{
   private static final int WIDTH = 80;
   private static final int HEIGHT = 30;
@@ -241,7 +243,8 @@ public class Game{
     System.out.println("End game: q/quit");
     System.out.println("Attack: a/attack");
     System.out.println("Special: sp/special");
-    System.out.println("Self support: su/support");
+    System.out.println("Ally support: asu/allysupport");
+    System.out.println("Self support: ssu/selfsupport");
 
     //Main loop
 
@@ -262,47 +265,65 @@ public class Game{
         if(input.equals("attack") || input.equals("a")){
           /*>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>*/
           TextBox(10,3,50,1, "Which enemy? Type in 0-2, based on positioning" );
-          int hit=Integer.parseInt(userInput(in));
-          if(hit>=0&&hit<=enemies.size()){
-            drawScreen();
-            String text = (party.get(whichPlayer).attack(enemies.get(hit)));
-            TextBox(16, 3, 75, 2, text);
-          }
-          else{
-            drawScreen();
-            TextBox(16, 3, 75, 1, "No valid enemy selected");
+          try{
+            int hit = Integer.parseInt(userInput(in));
+            if (hit >= 0 && hit < enemies.size()){
+              String text = party.get(whichPlayer).attack(enemies.get(hit));
+              drawScreen();
+              TextBox(16,3,75,2,text);
+            }
+            else{
+              TextBox(16,3,75,1, "No valid enemy selected");
+            }
+          } catch (IllegalArgumentException e){
+            TextBox(16,3,75,1, "Input a valid number");
           }
           /*<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<*/
         }
         else if(input.equals("special") || input.equals("sp")){
           /*>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>*/
           TextBox(10,3,50,1, "Which enemy? Type in 0-2, based on positioning" );
-          int wild=Integer.parseInt(userInput(in));
-          if(wild<0||wild>enemies.size()){
-            drawScreen();
-            TextBox(16,3,75,1,"No valid enemy selected");
-          }
-          else{
-            drawScreen();
-            String text = (party.get(whichPlayer).specialAttack(enemies.get(wild)));
-            TextBox(16, 3, 75, 2, text);
+          try{
+            int hit = Integer.parseInt(userInput(in));
+            if (hit >= 0 && hit < enemies.size()){
+              String text = party.get(whichPlayer).specialAttack(enemies.get(hit));
+              drawScreen();
+              TextBox(16,3,75,2,text);
+            }
+            else{
+              TextBox(16,3,75,1,"No valid enemy selected");
+            }
+          } catch (IllegalArgumentException e){
+            TextBox(16,3,75,1,"Input a valid number");
           }
           /*<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<*/
         }
-        else if(input.startsWith("su") || input.startsWith("support")){
+        else if(input.startsWith("asu") || input.startsWith("allysupport")){
           //"support 0" or "su 0" or "su 2" etc.
           //assume the value that follows su  is an integer.
           /*>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>*/
           TextBox(10,3,50,1, "Which ally? Type in 0-2, based on positioning" );
-          int help=Integer.parseInt(userInput(in));
-          if(help<0||help>party.size()){
-            drawScreen();
-            TextBox(16,3,75,1,"No valid ally selected");
+          try{
+            int help = Integer.parseInt(userInput(in));
+            if (help >= 0 && help < party.size()){
+              String text = party.get(whichPlayer).support(party.get(help));
+              drawScreen();
+              TextBox(16,3,75,2,text);
+            }
+            else{
+              TextBox(16,3,75,1,"No valid ally selected");
+            }
+          } catch (IllegalArgumentException e){
+            TextBox(16,3,75,1,"Input a valid number");
           }
-           else{
-            String text = (party.get(whichPlayer).support(party.get(help)));
-            TextBox(16, 3, 75, 2, text);
-           }
+          /*<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<*/
+        }
+        else if(input.startsWith("ssu") || input.startsWith("selfsupport")){
+
+          /*>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>*/
+            String text = party.get(whichPlayer).support();
+            drawScreen();
+            TextBox(16,3,75,2,text);
           /*<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<*/
         }
 
