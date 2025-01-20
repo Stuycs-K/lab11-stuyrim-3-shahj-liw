@@ -3,7 +3,7 @@ public class Game{
   private static final int WIDTH = 80;
   private static final int HEIGHT = 30;
   private static final int BORDER_COLOR = Text.BLUE;
-  private static final int BORDER_BACKGROUND = Text.WHITE + Text.BACKGROUND;
+  private static final int BORDER_BACKGROUND = Text.BLACK + Text.BACKGROUND;
 
   public static void main(String[] args) {
     run();
@@ -61,7 +61,8 @@ public class Game{
       Text.go(row + i, col); // goes to the current row based off i
       for (int j = 0; j < width; j++){ // starts writing
         if (place < text.length()){ // makes sure it doesnt go out of bounds
-          System.out.print(text.charAt(place));
+          String output = "" + text.charAt(place);
+          System.out.print(Text.colorize(output, Text.WHITE));
           place++; // go to next character in the text string
         }
         else{
@@ -154,9 +155,9 @@ public class Game{
   public static Adventurer p1=createRandomAdventurer();
   public static Adventurer p2=createRandomAdventurer();
   public static Adventurer p3=createRandomAdventurer();
-  public static Adventurer p1e= new OpenAIEmployee("OpenAI Employee 1", 75);
-  public static Adventurer p2e= new OpenAIEmployee("OpenAI Employee 2", 75);
-  public static Adventurer p3e= new OpenAIEmployee("OpenAI Employee 3", 75);
+  public static Adventurer p1e= new OpenAIEmployee("OpenAI Employee 0", 75);
+  public static Adventurer p2e= new OpenAIEmployee("OpenAI Employee 1", 75);
+  public static Adventurer p3e= new OpenAIEmployee("OpenAI Employee 2", 75);
   //Display the party and enemies
   //Do not write over the blank areas where text will appear.
   //Place the cursor at the place where the user will by typing their input at the end of this method.
@@ -183,7 +184,7 @@ public class Game{
 
   public static String userInput(Scanner in){
       //Move cursor to prompt location
-
+      Text.go(15, 3);
       //show cursor
 
       String input = in.nextLine();
@@ -260,25 +261,31 @@ public class Game{
         //Process user input for the last Adventurer:
         if(input.equals("attack") || input.equals("a")){
           /*>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>*/
-          TextBox(20,3,30,1, "Which enemy? Type in 0-2, based on positioning" );
+          TextBox(10,3,50,1, "Which enemy? Type in 0-2, based on positioning" );
           int hit=Integer.parseInt(userInput(in));
           if(hit>=0&&hit<=enemies.size()){
-            System.out.println(party.get(whichPlayer).attack(enemies.get(hit)));
+            drawScreen();
+            String text = (party.get(whichPlayer).attack(enemies.get(hit)));
+            TextBox(16, 3, 75, 2, text);
           }
           else{
-            System.out.println("Invalid Target");
+            drawScreen();
+            TextBox(16, 3, 75, 1, "No valid enemy selected");
           }
           /*<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<*/
         }
         else if(input.equals("special") || input.equals("sp")){
           /*>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>*/
-          TextBox(20,3,30,1, "Which enemy? Type in 0-2, based on positioning" );
+          TextBox(10,3,50,1, "Which enemy? Type in 0-2, based on positioning" );
           int wild=Integer.parseInt(userInput(in));
           if(wild<0||wild>enemies.size()){
-            System.out.print("No valid enemy selected");
+            drawScreen();
+            TextBox(16,3,75,1,"No valid enemy selected");
           }
           else{
-            System.out.println(party.get(whichPlayer).specialAttack(enemies.get(wild)));
+            drawScreen();
+            String text = (party.get(whichPlayer).specialAttack(enemies.get(wild)));
+            TextBox(16, 3, 75, 2, text);
           }
           /*<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<*/
         }
@@ -286,13 +293,15 @@ public class Game{
           //"support 0" or "su 0" or "su 2" etc.
           //assume the value that follows su  is an integer.
           /*>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>*/
-          TextBox(20,3,30,1, "Which ally? Type in 0-2, based on positioning" );
+          TextBox(10,3,50,1, "Which ally? Type in 0-2, based on positioning" );
           int help=Integer.parseInt(userInput(in));
           if(help<0||help>party.size()){
-            System.out.print("Failed to help");
+            drawScreen();
+            TextBox(16,3,75,1,"No valid ally selected");
           }
            else{
-            System.out.println(party.get(whichPlayer).support(party.get(help)));
+            String text = (party.get(whichPlayer).support(party.get(help)));
+            TextBox(16, 3, 75, 2, text);
            }
           /*<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<*/
         }
@@ -355,7 +364,7 @@ public class Game{
       }
 
       //display the updated screen after input has been processed.
-      drawScreen();
+      //drawScreen();
 
 
     }//end of main game loop
