@@ -236,6 +236,11 @@ public class Game{
 
     //You can add parameters to draw screen!
     drawScreen();//initial state.
+    System.out.println("Controls:");
+    System.out.println("End game: q/quit");
+    System.out.println("Attack: a/attack");
+    System.out.println("Special: sp/special");
+    System.out.println("Self support: su/support");
 
     //Main loop
 
@@ -255,7 +260,7 @@ public class Game{
         //Process user input for the last Adventurer:
         if(input.equals("attack") || input.equals("a")){
           /*>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>*/
-          System.out.println("which enemy? Type in 0-2, based on positioning");
+          System.out.println("Which enemy? Type in 0-2, based on positioning");
           int hit=Integer.parseInt(userInput(in));
           if(hit>=0&&hit<=enemies.size()){
             System.out.println(party.get(whichPlayer).attack(enemies.get(hit)));
@@ -267,21 +272,21 @@ public class Game{
         }
         else if(input.equals("special") || input.equals("sp")){
           /*>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>*/
-          System.out.println("which enemy? Type in 0-2, based on positioning");
+          System.out.println("Which enemy? Type in 0-2, based on positioning");
           int wild=Integer.parseInt(userInput(in));
           if(wild<0||wild>enemies.size()){
             System.out.print("No valid enemy selected");
           }
           else{
-            System.out.println(party.get(whichPlayer).support(enemies.get(wild)));
+            System.out.println(party.get(whichPlayer).specialAttack(enemies.get(wild)));
           }
           /*<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<*/
         }
-        else if(input.startsWith("su ") || input.startsWith("support ")){
+        else if(input.startsWith("su") || input.startsWith("support")){
           //"support 0" or "su 0" or "su 2" etc.
           //assume the value that follows su  is an integer.
           /*>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>*/
-          System.out.println("which enemy? Type in 0-x, based on positioning");
+          System.out.println("Which ally? Type in 0-2, based on positioning");
           int help=Integer.parseInt(userInput(in));
           if(help<0||help>party.size()){
             System.out.print("Failed to help");
