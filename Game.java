@@ -282,10 +282,10 @@ public class Game{
             if (hit >= 0 && hit < enemies.size()){
               String text = party.get(whichPlayer).attack(enemies.get(hit));
               drawScreen();
-              TextBox(16,3,75,2,text);
+              TextBox(16,3,75,5,text);
 
               if (enemies.get(hit).getHP() <= 0){
-                TextBox(16, 3, 75, 2, enemies.get(hit).getName() + " is dead");
+                TextBox(16, 3, 75, 5, enemies.get(hit).getName() + " is dead");
                 enemies.remove(hit);
               }
             }
@@ -305,11 +305,17 @@ public class Game{
             if (hit >= 0 && hit < enemies.size()){
               String text = party.get(whichPlayer).specialAttack(enemies.get(hit));
               drawScreen();
-              TextBox(16,3,75,2,text);
+              TextBox(16,3,75,5,text);
 
               if (enemies.get(hit).getHP() <= 0){
-                TextBox(16, 3, 75, 2, enemies.get(hit).getName() + " is dead");
+                TextBox(16, 3, 75, 1, enemies.get(hit).getName() + " is dead");
                 enemies.remove(hit);
+              }
+
+              // for alchemist specifically
+              if (party.get(whichPlayer).getHP() <= 0){
+                TextBox(16, 3, 75, 2, party.get(whichPlayer).getName() + " died while performing ultimate. RIP.");
+                party.remove(whichPlayer);
               }
             }
             else{
@@ -330,7 +336,7 @@ public class Game{
             if (help >= 0 && help < party.size()){
               String text = party.get(whichPlayer).support(party.get(help));
               drawScreen();
-              TextBox(16,3,75,2,text);
+              TextBox(16,3,75,5,text);
             }
             else{
               TextBox(16,3,75,1,"No valid ally selected");
@@ -345,7 +351,7 @@ public class Game{
           /*>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>*/
             String text = party.get(whichPlayer).support();
             drawScreen();
-            TextBox(16,3,75,2,text);
+            TextBox(16,3,75,5,text);
           /*<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<*/
         }
 
