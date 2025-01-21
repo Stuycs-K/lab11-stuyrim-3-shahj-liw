@@ -276,12 +276,12 @@ public class Game{
 
       //display event based on last turn's input
       if(partyTurn){
-        TextBox(12,3,50,2,preprompt);
+        TextBox(12,3,50,2,"Enter command for "+party.get(whichPlayer)+": attack/special/support/quit");
         //Process user input for the last Adventurer:
         if(input.equals("attack") || input.equals("a")){
           /*>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>*/
-          TextBox(10,3,50,1, "Which enemy? Type in 0-2, based on positioning" );
           try{
+            TextBox(10,3,50,1, "Which enemy? Type in 0-2, based on positioning" );
             int hit = Integer.parseInt(userInput(in));
             if (hit >= 0 && hit < enemies.size()){
               String text = party.get(whichPlayer).attack(enemies.get(hit));
@@ -303,8 +303,8 @@ public class Game{
         }
         else if(input.equals("special") || input.equals("sp")){
           /*>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>*/
-          TextBox(10,3,50,1, "Which enemy? Type in 0-2, based on positioning" );
           try{
+            TextBox(10,3,50,1, "Which enemy? Type in 0-2, based on positioning");
             int hit = Integer.parseInt(userInput(in));
             if (hit >= 0 && hit < enemies.size()){
               String text = party.get(whichPlayer).specialAttack(enemies.get(hit));
@@ -334,8 +334,8 @@ public class Game{
           //"support 0" or "su 0" or "su 2" etc.
           //assume the value that follows su  is an integer.
           /*>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>*/
-          TextBox(10,3,50,1, "Which ally? Type in 0-2, based on positioning" );
           try{
+            TextBox(10,3,50,1, "Which ally? Type in 0-2, based on positioning" );
             int help = Integer.parseInt(userInput(in));
             if (help >= 0 && help < party.size()){
               String text = party.get(whichPlayer).support(party.get(help));
@@ -357,6 +357,10 @@ public class Game{
             drawScreen();
             TextBox(16,3,75,5,text);
           /*<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<*/
+        }
+        else{
+          TextBox(16, 3, 75, 1, "Redo. Awaiting Orders, Player 1 (I like battleship).");
+          continue;
         }
 
         if(party.get(whichPlayer).getHP()<=0){
