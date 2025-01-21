@@ -1,7 +1,5 @@
 import java.util.*;
 
-
-
 public class Game{
   private static final int WIDTH = 80;
   private static final int HEIGHT = 30;
@@ -161,7 +159,7 @@ public class Game{
   public static Adventurer p3=createRandomAdventurer();
   public static Adventurer p1e= new OpenAIEmployee("OpenAI Employee 0", 75);
   public static Adventurer p2e= new ChatGPT("AM (BOSS)", 200);
-  public static Adventurer p3e= new OpenAIEmployee("OpenAI Employee 2", 75);
+  public static Adventurer p3e= new OpenAIEmployee("OpenAI Employee 1", 75);
   //Display the party and enemies
   //Do not write over the blank areas where text will appear.
   //Place the cursor at the place where the user will by typing their input at the end of this method.
@@ -274,7 +272,7 @@ public class Game{
       input = userInput(in);
 
       //example debug statment
-      TextBox(9,3,50,1,"input: "+input+" partyTurn:"+partyTurn+ " whichPlayer="+whichPlayer+ " whichOpp="+whichOpponent );
+      //TextBox(9,3,50,1,"input: "+input+" partyTurn:"+partyTurn+ " whichPlayer="+whichPlayer+ " whichOpp="+whichOpponent );
 
       //display event based on last turn's input
       if(partyTurn){
