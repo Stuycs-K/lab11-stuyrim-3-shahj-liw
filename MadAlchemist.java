@@ -50,7 +50,7 @@ public class MadAlchemist extends Adventurer{
       other.applyDamage(damage);
       setHP(getHP() - 20);
       return this + " inhales 50 toxicity to release the Elder Dragon's Acid and deals "+ damage 
-      + " to each enemy! " + this + " also feels the poison and loses 20 health.";
+      + " to " + other + this + " also feels the poison and loses 20 health.";
     }else{
       return "Not enough toxicity to release the Elder Dragon's Acid. Instead, "+ attack(other);
     }
