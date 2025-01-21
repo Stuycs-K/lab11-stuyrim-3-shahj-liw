@@ -21,13 +21,13 @@ public class Game{
         for (int j = 1; j <= WIDTH; j++){
             Text.go(i,j);
             if (i == 1 || i == 30 || j == 1 || j == 80){
-              System.out.println(Text.colorize(" ", BORDER_COLOR + Text.BACKGROUND));
+              System.out.print(Text.colorize(" ", BORDER_COLOR + Text.BACKGROUND));
             }
             else if (i == 7 || i == 24){
-              System.out.println(Text.colorize(" ", BORDER_COLOR + Text.BACKGROUND));
+              System.out.print(Text.colorize(" ", BORDER_COLOR + Text.BACKGROUND));
             }
             else{
-              System.out.println(Text.colorize(" ", BORDER_BACKGROUND));
+              System.out.print(Text.colorize(" ", BORDER_BACKGROUND));
             }
         }
     }
@@ -194,7 +194,8 @@ public class Game{
       String input = in.nextLine();
 
       //clear the text that was written
-
+      Text.go(15,3);
+      System.out.print("                 ");
       return input;
   }
 
@@ -256,7 +257,7 @@ public class Game{
     //Main loop
 
     //display this prompt at the start of the game.
-    String preprompt = "Enter command for "+party.get(whichPlayer)+": attack/special/quit";
+    String preprompt = "Enter command for "+party.get(whichPlayer)+": attack/special/support/quit";
 
     while(! (input.equalsIgnoreCase("q") || input.equalsIgnoreCase("quit"))){
       //Read user input
@@ -379,7 +380,7 @@ public class Game{
         if(whichPlayer < party.size()){
           //This is a player turn.
           //Decide where to draw the following prompt:
-          String prompt = "Enter command for "+party.get(whichPlayer)+": attack/special/quit";
+          String prompt = "Enter command for "+party.get(whichPlayer)+": attack/special/support/quit";
 
 
         }else{
@@ -446,7 +447,7 @@ public class Game{
         turn++;
         partyTurn=true;
         //display this prompt before player's turn
-        String prompt = "Enter command for "+party.get(whichPlayer)+": attack/special/quit";
+        String prompt = "Enter command for "+party.get(whichPlayer)+": attack/special/support/quit";
       }
 
       //display the updated screen after input has been processed.
