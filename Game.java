@@ -118,7 +118,8 @@ public class Game{
       // health
       for (int i = 0; i < party.size(); i++){
         Text.go(startRow + 1, spacing * i + 3);
-        System.out.print("HP: " + colorByPercent(party.get(i).getHP(), party.get(i).getmaxHP()));
+        System.out.print("HP: ");
+        colorByPercent(party.get(i).getHP(), party.get(i).getmaxHP());
       }
 
       // special
