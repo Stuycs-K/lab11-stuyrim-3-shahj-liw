@@ -251,6 +251,7 @@ public class Game{
     System.out.println("Special: sp/special");
     System.out.println("Ally support: asu/allysupport");
     System.out.println("Self support: ssu/selfsupport");
+    System.out.println("On a blank screen (every turn), input one of these. On Enemy Turns, hit enter");
 
     //Main loop
 
@@ -359,7 +360,7 @@ public class Game{
           /*<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<*/
         }
         else{
-          TextBox(16, 3, 75, 1, "Redo. Awaiting Orders, Player 1 (I like battleship).");
+          TextBox(16, 3, 75, 1, "Awaiting Orders, Player 1 (I like battleship).");
           continue;
         }
 
