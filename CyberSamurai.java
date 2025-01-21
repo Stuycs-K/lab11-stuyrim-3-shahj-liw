@@ -52,7 +52,7 @@ public class CyberSamurai extends Adventurer{
       int damage = (int)(Math.random()*26)+50;
       other.applyDamage(damage);
       return this + " gathers 50 focus to perform Rampage and deals "+ damage
-      + " damage to each enemy!";
+      + " damage to " + other + "!";
     }else{
       return "Not enough focus to Rampage. Instead, "+ attack(other);
     }
