@@ -160,7 +160,7 @@ public class Game{
   public static Adventurer p2=createRandomAdventurer();
   public static Adventurer p3=createRandomAdventurer();
   public static Adventurer p1e= new OpenAIEmployee("OpenAI Employee 0", 75);
-  public static Adventurer p2e= new ChatGPT("AM", 140);
+  public static Adventurer p2e= new ChatGPT("AM (BOSS)", 200);
   public static Adventurer p3e= new OpenAIEmployee("OpenAI Employee 2", 75);
   //Display the party and enemies
   //Do not write over the blank areas where text will appear.
