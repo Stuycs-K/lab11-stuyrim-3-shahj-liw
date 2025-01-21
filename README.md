@@ -72,4 +72,5 @@ Make a clear list of features that work/dont work
 - **Randomizes Party Loadout Every Run** - [x]
 - **"Balanced" (hard, but easier because the AI is more artifical then intelligence, so balances out overall)"** - [x]
 - **All Input Line Commands Working** - [x]
+- **Party Is Randomized (More fun that way)** - [x]
 - **Have Boss and regular enemy types (note, slightly confused but worked it like its boss and minion types, like RPG)** - [x]
