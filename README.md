@@ -17,7 +17,7 @@ Make a clear list of features that work/dont work
 
 # Ally Subclasses
 
-## Cyber Samurai
+## Cyber Samurai - [x]
 - **HP**: **100 HP**
 - **Attack**: *Cyber Slice*: Deals 20-25 damage to an enemy and restores 10 focus 
 - **Support (Self)**: *Meditate*: Restores 10-15 focus
@@ -25,7 +25,7 @@ Make a clear list of features that work/dont work
 - **Ultimate**: *Rampage (Requires 50 focus)*: Deals 50-75 damage
 - **Special Resource**: **Focus**
 
-## Mad Alchemist
+## Mad Alchemist - [x]
 - **HP**: **80 HP**
 - **Attack**: *Acid Throw*: Deals 15-20 damage to an enemy and restores 5 toxicity 
 - **Support (Ally)**: *Healthy Brew*: Throws a healing potion to a team member, healing them for 20 hp
@@ -34,7 +34,7 @@ Make a clear list of features that work/dont work
 - **Special Resource**: **Toxicity**
 
 
-## Tech Priest
+## Tech Priest - [x]
 - **HP**: **60 HP**
 - **Attack**: *Guided Bolt*: Deals 5 damage to the enemy and restore 10 faith
 - **Support (Self)**: *Artificial Augmentation*: Converts half of current faith to additional HP
@@ -44,7 +44,7 @@ Make a clear list of features that work/dont work
 
 # Enemy Subclass
 
-## OpenAIEmployee
+## OpenAIEmployee - [x]
 - **HP**: **75 HP**
 - **Attack**: *Stone Throw*: Deals 15-20 damage, restores 10 paycheck
 - **Support (Self)**: *So Lucky!*: Restores 10-15 paycheck
@@ -54,10 +54,18 @@ Make a clear list of features that work/dont work
 
 # Boss
 
-## AM
+## AM - [x]
 - **HP**: **200 HP**
 - **Attack**: *Remove free image upload*: Deals 30 damage, restores 10 serverDownPercentage
 - **Support (Self)**: *Self Sabotage but Good*: Restores 20 serverDownPercentage
 - **Support (Ally)**: *Solo*: restores to self because boss has no teammates
 - **Ultimate**: *Crash before Finals (Requires 100 serverDownPercentage)*: Deals 99 damage
 - **Special Resource**: **serverDownPercentage**
+
+# Other Features
+- **Text Show** - [x]
+- **Color text** - [x]
+- **Death Messages** - [x]
+- **Victory and Defeat** - [x]
+- **Properly Draw out Party** - [x]
+- **Have Boss and regular enemy types** - [x]
