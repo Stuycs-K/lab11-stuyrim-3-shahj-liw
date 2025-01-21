@@ -118,7 +118,7 @@ public class Game{
       // health
       for (int i = 0; i < party.size(); i++){
         Text.go(startRow + 1, spacing * i + 3);
-        System.out.print("HP: " + party.get(i).getHP() + "/" + party.get(i).getmaxHP());
+        System.out.print("HP: " + colorByPercent(party.get(i).getHP(), party.get(i).getmaxHP()));
       }
 
       // special
@@ -327,10 +327,21 @@ public class Game{
           /*<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<*/
         }
 
+        if(party.get(whichPlayer).getHP()<=0){
+          TextBox(16,3,75,2,party.get(whichPlayer).getName()+" is dead. RIP.")
+          party.remove(whichPlayer);
+          if(whichPlayer>=party.size()){
+            whichPlayer=0;
+          }
+        }
+
         //You should decide when you want to re-ask for user input
         //If no errors:
         whichPlayer++;
-
+        if(party.isEmpty()){
+          TextBox(16,3,75,2,"Everyone is dead. You have no mouth and you must scream. Game Over.");
+          break; //How do we do it without break?
+        }
 
         if(whichPlayer < party.size()){
           //This is a player turn.
