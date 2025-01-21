@@ -47,7 +47,7 @@ public class TechPriest extends Adventurer{
     if(getSpecial() >= 60){
       setSpecial(getSpecial()-60);
       other.setHP(other.getmaxHP());
-      return this + " prays to The Original Programmer to heal all allies to max!";
+      return this + " prays to The Original Programmer to heal " + other + " to max HP!";
     }else{
       return "The Original Programmer doesn't respond to the prayer. Nothing happens...";
     }
