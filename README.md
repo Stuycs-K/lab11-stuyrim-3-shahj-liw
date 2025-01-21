@@ -54,8 +54,8 @@ Make a clear list of features that work/dont work
 
 # Boss
 
-## ChatGPT
-- **HP**: **300 HP**
+## AM
+- **HP**: **200 HP**
 - **Attack**: *Remove free image upload*: Deals 30 damage, restores 10 serverDownPercentage
 - **Support (Self)**: *Self Sabotage but Good*: Restores 20 serverDownPercentage
 - **Support (Ally)**: *Solo*: restores to self because boss has no teammates
