@@ -158,7 +158,7 @@ public class Game{
   public static Adventurer p2=createRandomAdventurer();
   public static Adventurer p3=createRandomAdventurer();
   public static Adventurer p1e= new OpenAIEmployee("OpenAI Employee 0", 75);
-  public static Adventurer p2e= new OpenAIEmployee("OpenAI Employee 1", 75);
+  public static Adventurer p2e= new ChatGPT("AM", 140);
   public static Adventurer p3e= new OpenAIEmployee("OpenAI Employee 2", 75);
   //Display the party and enemies
   //Do not write over the blank areas where text will appear.
@@ -354,15 +354,26 @@ public class Game{
         //enemy attacks a randomly chosen person with a randomly chosen attack.z`
         //Enemy action choices go here!
         /*>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>*/
-        //YOUR CODE HERE
-        /*this could work, keep as holder
-        if(enemy.maxHP()*.5<enemy.hp()){
-          enemy.support()
+        Random rand=new Random();
+        int ActionNumber=rand.nextInt(3);
+        if(ActionNumber==0){
+            int hit = rand.nextInt(party.size());
+            String text = enemies.get(whichOpponent).attack(party.get(hit));
+            drawScreen();
+            TextBox(16,3,75,2,text);
         }
-        else if (enemy.special){
-          enemy,Special();//If fails, calls attack, make this better
+        else if (ActionNumber==1){
+            int special = rand.nextInt(party.size());
+            String text = enemies.get(whichOpponent).specialAttack(party.get(special));
+            drawScreen();
+            TextBox(16,3,75,2,text);
         }
-        */
+        else if(ActionNumber==2){
+            int heal = rand.nextInt(enemies.size());
+            String text = enemies.get(whichOpponent).support(enemies.get(heal));
+            drawScreen();
+            TextBox(16,3,75,2,text);
+        }
         /*<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<*/
 
 
