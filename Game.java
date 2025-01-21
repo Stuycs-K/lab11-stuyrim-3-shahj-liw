@@ -328,7 +328,7 @@ public class Game{
         }
 
         if(party.get(whichPlayer).getHP()<=0){
-          TextBox(16,3,75,2,party.get(whichPlayer).getName()+" is dead. RIP.")
+          TextBox(16,3,75,2,party.get(whichPlayer).getName()+" is dead. RIP.");
           party.remove(whichPlayer);
           if(whichPlayer>=party.size()){
             whichPlayer=0;
