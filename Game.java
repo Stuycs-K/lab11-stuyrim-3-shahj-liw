@@ -260,15 +260,15 @@ public class Game{
 
     while(! (input.equalsIgnoreCase("q") || input.equalsIgnoreCase("quit"))){
       //Read user input
-    if (party.isEmpty()) {
-        TextBox(16, 3, 75, 2, "All allies are dead. DEFEAT.");
-        break;
-    }
+      if (party.isEmpty()) {
+          TextBox(16, 3, 75, 2, "All allies are dead. DEFEAT.");
+          break;
+      }
 
-    if (enemies.isEmpty()) {
-      TextBox(16, 3, 75, 2, "All enemies are dead. VICTORY!");
-      break;
-    }
+      if (enemies.isEmpty()) {
+        TextBox(16, 3, 75, 2, "All enemies are dead. VICTORY!");
+        break;
+      }
 
       input = userInput(in);
 
@@ -277,7 +277,7 @@ public class Game{
 
       //display event based on last turn's input
       if(partyTurn){
-
+        TextBox(12,3,50,2,preprompt);
         //Process user input for the last Adventurer:
         if(input.equals("attack") || input.equals("a")){
           /*>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>*/
