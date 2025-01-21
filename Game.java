@@ -201,6 +201,11 @@ public class Game{
   public static void quit(){
     Text.reset();
     Text.showCursor();
+    drawBackground();
+    Text.go(15,10);
+    System.out.print("GAME OVER! GAME OVER! GAME OVER! GAME OVER! GAME OVER!");
+    Text.go(16,20);
+    System.out.println("THANK YOU FOR PLAYING!");
     Text.go(32,1);
   }
 
