@@ -1,6 +1,7 @@
 import java.util.*;
 
-import javax.swing.text.DefaultStyledDocument.ElementSpec;
+
+
 public class Game{
   private static final int WIDTH = 80;
   private static final int HEIGHT = 30;
@@ -254,6 +255,16 @@ public class Game{
 
     while(! (input.equalsIgnoreCase("q") || input.equalsIgnoreCase("quit"))){
       //Read user input
+    if (party.isEmpty()) {
+        TextBox(16, 3, 75, 2, "All allies are dead. DEFEAT.");
+        break;
+    }
+
+    if (enemies.isEmpty()) {
+      TextBox(16, 3, 75, 2, "All enemies are dead. VICTORY!");
+      break;
+    }
+
       input = userInput(in);
 
       //example debug statment
@@ -272,6 +283,11 @@ public class Game{
               String text = party.get(whichPlayer).attack(enemies.get(hit));
               drawScreen();
               TextBox(16,3,75,2,text);
+
+              if (enemies.get(hit).getHP() <= 0){
+                TextBox(16, 3, 75, 2, enemies.get(hit).getName() + " is dead");
+                enemies.remove(hit);
+              }
             }
             else{
               TextBox(16,3,75,1, "No valid enemy selected");
@@ -290,6 +306,11 @@ public class Game{
               String text = party.get(whichPlayer).specialAttack(enemies.get(hit));
               drawScreen();
               TextBox(16,3,75,2,text);
+
+              if (enemies.get(hit).getHP() <= 0){
+                TextBox(16, 3, 75, 2, enemies.get(hit).getName() + " is dead");
+                enemies.remove(hit);
+              }
             }
             else{
               TextBox(16,3,75,1,"No valid enemy selected");
@@ -373,12 +394,22 @@ public class Game{
             String text = enemies.get(whichOpponent).attack(party.get(hit));
             drawScreen();
             TextBox(16,3,75,2,text);
+
+            if (party.get(hit).getHP() <= 0) {
+              TextBox(16, 3, 75, 2, party.get(hit).getName() + " is dead.");
+              party.remove(hit);
+            }
         }
         else if (ActionNumber==1){
             int special = rand.nextInt(party.size());
             String text = enemies.get(whichOpponent).specialAttack(party.get(special));
             drawScreen();
             TextBox(16,3,75,2,text);
+
+            if (party.get(special).getHP() <= 0) {
+              TextBox(16, 3, 75, 2, party.get(special).getName() + " is dead.");
+              party.remove(special);
+            }
         }
         else if(ActionNumber==2){
             int heal = rand.nextInt(enemies.size());
