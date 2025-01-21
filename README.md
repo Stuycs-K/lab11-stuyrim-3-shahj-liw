@@ -17,7 +17,7 @@ Make a clear list of features that work/dont work
 
 # Ally Subclasses
 
-## Cyber Samurai - [x]
+## Cyber Samurai - :white_check_mark:
 - **HP**: **100 HP**
 - **Attack**: *Cyber Slice*: Deals 20-25 damage to an enemy and restores 10 focus 
 - **Support (Self)**: *Meditate*: Restores 10-15 focus
@@ -25,7 +25,7 @@ Make a clear list of features that work/dont work
 - **Ultimate**: *Rampage (Requires 50 focus)*: Deals 50-75 damage
 - **Special Resource**: **Focus**
 
-## Mad Alchemist - [x]
+## Mad Alchemist - :white_check_mark:
 - **HP**: **80 HP**
 - **Attack**: *Acid Throw*: Deals 15-20 damage to an enemy and restores 5 toxicity 
 - **Support (Ally)**: *Healthy Brew*: Throws a healing potion to a team member, healing them for 20 hp
@@ -34,7 +34,7 @@ Make a clear list of features that work/dont work
 - **Special Resource**: **Toxicity**
 
 
-## Tech Priest - [x]
+## Tech Priest - :white_check_mark:
 - **HP**: **60 HP**
 - **Attack**: *Guided Bolt*: Deals 5 damage to the enemy and restore 10 faith
 - **Support (Self)**: *Artificial Augmentation*: Converts half of current faith to additional HP
@@ -44,7 +44,7 @@ Make a clear list of features that work/dont work
 
 # Enemy Subclass
 
-## OpenAIEmployee - [x]
+## OpenAIEmployee - :white_check_mark:
 - **HP**: **75 HP**
 - **Attack**: *Stone Throw*: Deals 15-20 damage, restores 10 paycheck
 - **Support (Self)**: *So Lucky!*: Restores 10-15 paycheck
@@ -54,7 +54,7 @@ Make a clear list of features that work/dont work
 
 # Boss
 
-## AM - [x]
+## AM - :white_check_mark:
 - **HP**: **200 HP**
 - **Attack**: *Remove free image upload*: Deals 30 damage, restores 10 serverDownPercentage
 - **Support (Self)**: *Self Sabotage but Good*: Restores 20 serverDownPercentage
@@ -63,14 +63,17 @@ Make a clear list of features that work/dont work
 - **Special Resource**: **serverDownPercentage**
 
 # Other Features
-- **Text Show** - [x]
-- **Color text** - [x]
-- **Death Messages** - [x]
-- **Victory and Defeat** - [x]
-- **Properly Draw out Party** - [x]
-- **Displays message on how it functions** - [x]
-- **Randomizes Party Loadout Every Run** - [x]
-- **"Balanced" (hard, but easier because the AI is more artifical then intelligence, so balances out overall)"** - [x]
-- **All Input Line Commands Working** - [x]
-- **Party Is Randomized (More fun that way)** - [x]
-- **Have Boss and regular enemy types (note, slightly confused but worked it like its boss and minion types, like RPG)** - [x]
+- **Mad Alchemist takes damage during ultimate** - :ballot_box_with_check:
+- **Overheal** - :beetle:
+- **Text Show** - :white_check_mark:
+- **Color text** - :white_check_mark:
+- **Death Messages** - :white_check_mark:
+- **Quit** - :white_check_mark:
+- **Victory and Defeat** - :question: (displays very briefly)
+- **Properly Draw out Party** - :white_check_mark:
+- **Displays message on how it functions** - :white_check_mark:
+- **Randomizes Party Loadout Every Run** - :white_check_mark:
+- **"Balanced" (hard, but easier because the AI is more artifical then intelligence, so balances out overall)"** - :white_check_mark:
+- **All Input Line Commands Working** - :white_check_mark:
+- **Party Is Randomized (More fun that way)** - :white_check_mark:
+- **Have Boss and regular enemy types (note, slightly confused but worked it like its boss and minion types, like RPG)** - :white_check_mark:
